@@ -2,10 +2,69 @@
 baseURL = "https://examplesite.com"
 languageCode = "en-us"
 title = "Hargo | Hugo Ecommerce Site"
-theme = "hargo"
+theme = "../../"
 summaryLength = "20"
 paginate = 10
 disqusShortname = ""
+
+############################# Multi-lingual ########################
+DefaultContentLanguage = "en"
+
+[languages]
+  [languages.en]
+  title = "Pestebar"
+  weight = 1
+  contentDir = "content/en"
+
+  [languages.en.params]
+  linkedin = "https://linkedin.com/whoever"
+  [[languages.en.menu.main]]
+  name = "Products"
+  URL = "products"
+  weight = 1
+
+  [[languages.en.menu.main]]
+  name = "Blog"
+  URL = "blog" # For making it multi-lingual use blog/en
+  weight = 2
+
+  [[languages.en.menu.main]]
+  name = "FAQ"
+  URL = "faq"
+  weight = 3
+
+  [[languages.en.menu.main]]
+  name = "Contact"
+  URL = "contact"
+  weight = 4
+
+
+  [languages.fa]
+  languagedirection = "rtl"
+  title = "مدونتي"
+  weight = 2
+  contentDir = "content/fa"
+
+  [[languages.fa.menu.main]]
+  name = "Mahsoolat"
+  URL = "fa/products"
+  weight = 1
+
+  [[languages.fa.menu.main]]
+  name = "Blog"
+  URL = "fa/blog" # For making it multi-lingual use blog/en
+  weight = 2
+
+  [[languages.fa.menu.main]]
+  name = "Porsesh Pasokh"
+  URL = "fa/faq"
+  weight = 3
+
+  [[languages.fa.menu.main]]
+  name = "Tamas ba ma"
+  URL = "fa/contact"
+  weight = 4
+
 
 ############################# Plugins ##############################
 [params.plugins]
