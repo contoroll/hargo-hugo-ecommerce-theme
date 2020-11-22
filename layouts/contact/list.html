@@ -2,12 +2,13 @@
 
 {{ partial "page-title.html" . }}
 
-{{ if site.Data.contact.contact.enable }}
+{{ $data := index site.Data .Site.Language.Lang }}
+{{ if $data.contact.contact.enable }}
 <section class="section pt-0">
   <div class="container">
     <div class="row">
       <div class="col-lg-4 col-sm-6">
-        {{ with site.Data.contact.contact.office }}
+        {{ with $data.contact.contact.office }}
         <h3 class="mb-4">{{ .title | markdownify }}</h3>
         <p>{{ .content | markdownify }}</p>
         {{ end }}
@@ -23,7 +24,7 @@
         </ul>
       </div>
       <div class="col-lg-3 offset-lg-1 col-sm-6">
-        {{ with site.Data.contact.contact.opennigHour }}
+        {{ with $data.contact.contact.opennigHour }}
         <h3 class="mb-4">{{ .title | markdownify }}</h3>
         <ul class="list-unstyled">
           {{ range .dayTimeList }}
@@ -47,7 +48,7 @@
 </section>
 {{ end }}
 
-{{ if site.Data.contact.map.enable }}
+{{ if $data.contact.map.enable }}
 <section class="section pt-0">
   <div class="container">
     <div id="map_canvas" data-latitude="{{ with site.Params.mapLatitude }} {{ . }} {{ end }}"
